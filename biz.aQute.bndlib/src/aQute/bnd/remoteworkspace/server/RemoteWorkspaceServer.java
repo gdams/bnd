@@ -88,10 +88,8 @@ public class RemoteWorkspaceServer implements Closeable {
 				"Cannot create the remote workspace directory with port numbers " + remotews);
 
 		System.out.println("Creating port file at: " + remotews.getAbsolutePath() + " " + server.getLocalPort())
-		remotewsPort = new File(remotews, server.getLocalPort() + "");
 		IO.store(server.getLocalPort() + "", remotewsPort);
 		logger.info("Opening remote workspace server {}", remotewsPort);
-		System.out.println("Written to: " + remotewsPort.getAbsolutePath())
 		remotewsPort.deleteOnExit();
 	}
 
